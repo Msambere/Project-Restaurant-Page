@@ -1,0 +1,194 @@
+@font-face {
+    font-family:"BasicFont2" ;
+    src: url('./Open_Sans/OpenSans-VariableFont_wdth,wght.ttf') format('truetype'),
+    url('./Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CurvyFont";
+    src: url('./Whisper/Whisper-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "BasicFont";
+    src: url('./Roboto/Roboto-Light.ttf') format('truetype'),
+    url('./Roboto/Roboto-Medium.ttf') format('truetype'),
+    url('./Roboto/Roboto-Regular.ttf') format('truetype'),
+    url('./Roboto/Roboto-Thin.ttf') format('truetype');
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'BasicFont';
+    font-style: normal;
+    font-weight:400;
+    color: white;
+}
+
+:root{
+    --d-green: #386641;
+    --m-green:#6A994E;
+    --l-green:#A7C957;
+    --bgc:#F2E8CF;
+    --accent-red:#BC4749;
+
+    font-size: 24px;
+    color: var(--d-green);
+}
+
+body{
+    background-color: var(--bgc);
+    height: 100vh;
+    width:100vw;
+}
+
+#content{
+    height:100vh;
+    display: grid;
+    grid-template-rows: 20vh 1fr 5vh;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer";
+}
+
+.header{
+    grid-area: header ;
+    background-color: var(--m-green);
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+
+.title{
+    font-family: 'CurvyFont';
+    padding: 20px;
+    font-size: 10vh;
+    color: white;
+
+}
+
+.nav{
+    grid-area: nav;
+    background-image: url(./images/field-portrait-sm.jpg);
+    resize: both;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 1px 1px 1rem black;
+}
+
+
+.nav-item{
+    background-color: var(--d-green);
+    border: none;
+    color:var(--bgc);
+    padding:5px;
+    margin: 0 5vw;
+}
+
+
+.main{
+    display: flex;
+    grid-area: main;
+    background-color: white;
+    color: var(--d-green)
+}
+
+.footer{
+    grid-area: footer;
+    background-color: var(--m-green);
+    text-align: center;
+    padding: 8px;
+    font-size: .5rem;
+}
+/*Home specific*/
+.home{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "photo intro";
+    align-items: center;
+}
+.intro{
+    color: var(--d-green);
+    text-align: center;
+    grid-area: intro;
+
+}
+
+.chef-photo{
+    grid-area: photo;
+}
+
+/*Menu specific*/
+
+.menu{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.menu-item{
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+    'photo name price'
+    'photo description description';
+}
+
+.menu-item p{
+    color: var(--d-green);
+
+}
+
+.menu-item-name{
+    grid-area: name;
+}
+
+.menu-item-price{
+    grid-area: price;
+}
+
+.menu-item-img{
+    grid-area: photo;
+    height: 100px;
+}
+
+.menu-item-p{
+    grid-area: description;
+}
+/*Contact specific*/
+
+
+.phone-number{
+    color: var(--d-green);
+}
+
+.map{
+    height: 300px;
+}
+
+
+
+
+
+
+/* Resources
+
+color palette: https://coolors.co/palette/386641-6a994e-a7c957-f2e8cf-bc4749
+farm table photo: https://unsplash.com/photos/silver-knife-with-black-handle-MM2pU1i0o0A
+sprouts photo: https://unsplash.com/photos/selective-focus-photo-of-plant-spouts-vrbZVyX2k4I
+outside picnic table: https://unsplash.com/photos/rectangular-brown-wooden-picnic-table-on-the-field-rYWEj9Cyx7E
+field-portrait: https://unsplash.com/photos/green-leafed-plants-during-daytime-2oYMwuFgnTg 
+Photo by <a href="https://unsplash.com/@scottwebb?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Scott Webb</a> on <a href="https://unsplash.com/photos/water-droplets-on-green-leaf-e6VmcXF8llA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
+
+*/
