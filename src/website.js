@@ -14,6 +14,13 @@ function createHeader(){
 };
 
 
+//Tab
+function createTab(){
+    const tab = document.createElement('div');
+    tab.classList.add('nav-tab');
+    return tab
+}
+
 //Nav
 function createNav(){    
     const nav = document.createElement('div');
@@ -22,21 +29,35 @@ function createNav(){
     const home = document.createElement('button');
     home.classList.add('home-link');
     home.classList.add('nav-item');
+    home.classList.add('active')
     home.textContent ='HOME';
+
+    const homeTab = createTab();
+    homeTab.classList.add('home-tab');
+    homeTab.classList.add('active');
+    homeTab.appendChild(home);
 
     const menu = document.createElement('button');
     menu.classList.add('menu-link');
     menu.classList.add('nav-item');
     menu.textContent ='MENU';
 
+    const menuTab = createTab();
+    menuTab.classList.add('menu-tab');
+    menuTab.appendChild(menu);
+
     const contact = document.createElement('button');
     contact.classList.add('contact-link');
     contact.classList.add('nav-item');
     contact.textContent ='CONTACT';
 
-    nav.appendChild(home);
-    nav.appendChild(menu);
-    nav.appendChild(contact);
+    const contactTab = createTab();
+    contactTab.classList.add('contact-tab');
+    contactTab.appendChild(contact);
+
+    nav.appendChild(homeTab);
+    nav.appendChild(menuTab);
+    nav.appendChild(contactTab);
     return nav;
 }
 

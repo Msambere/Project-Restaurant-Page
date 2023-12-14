@@ -82,23 +82,45 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     box-shadow: 1px 1px 1rem black;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
+.nav-tab{
+    background-color: var(--d-green);
+    width: 90%;
+    padding: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
 
 .nav-item{
     background-color: var(--d-green);
     border: none;
     color:var(--bgc);
     padding:5px;
-    margin: 0 5vw;
 }
 
+.active{
+    background-color: var(--l-green);
+    transform:translate(20px);
+    transform: scale(1.2);
+    transition: transform .1s ease-in-out;
+    justify-content: flex-end;
+}
 
 .main{
     display: flex;
     grid-area: main;
     background-color: white;
-    color: var(--d-green)
+    box-shadow: 1px 1px 1rem black;
+    border-radius: 8px;
+    color: var(--d-green);
+    margin-right: 20px;
 }
 
 .footer{

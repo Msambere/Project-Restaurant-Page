@@ -9,24 +9,48 @@ createSite();
 const main = document.getElementById('main');
 main.appendChild(createHome());
 
-const homeBtn = document.querySelector('.home-link');
-homeBtn.addEventListener('click', function () {
+//Tab coding
+
+function toggleTab(event){
+    let oldTab = document.querySelectorAll('.active');
+    oldTab.forEach((element)=> element.classList.toggle('active'))
+    let tab = event.target;
+    console.log(tab);
+    tab.classList.toggle('active');
+    console.log(tab.nodeName);
+    if (tab.nodeName === 'DIV'){
+        console.log(tab.firstElementChild)
+        tab.firstElementChild.classList.toggle('active');
+    } else {
+        console.log(tab.parentElement)
+        tab.parentElement.classList.toggle('active');
+    };
+}
+
+const homeBtn = document.querySelector('.home-tab');
+homeBtn.addEventListener('click', function (event) {
     let last = main.lastElementChild;
     main.removeChild(last);
-    main.appendChild(createHome())});
+    main.appendChild(createHome());
+    toggleTab(event);
+});
 
 
-const menuBtn = document.querySelector('.menu-link');
-menuBtn.addEventListener('click', function(){
+const menuBtn = document.querySelector('.menu-tab');
+menuBtn.addEventListener('click', function(event){
     let last = main.lastElementChild;
     main.removeChild(last);
-    main.appendChild(createMenu())});
+    main.appendChild(createMenu());
+    toggleTab(event);
+});
 
-const contactBtn = document.querySelector('.contact-link');
-contactBtn.addEventListener('click', function(){
+const contactBtn = document.querySelector('.contact-tab');
+contactBtn.addEventListener('click', function(event){
     let last = main.lastElementChild;
     main.removeChild(last);
-    main.appendChild(createContact())});
+    main.appendChild(createContact())
+    toggleTab(event);
+});
 
 
 
@@ -34,7 +58,8 @@ contactBtn.addEventListener('click', function(){
 
 //loadHome();
 
-//Tab coding
+
+
 
 
 
